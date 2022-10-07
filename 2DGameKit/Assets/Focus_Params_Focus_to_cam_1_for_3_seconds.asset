@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 811d723387f1f104d9cd2147ccd8b4f9, type: 3}
+  m_Name: Focus_Params_Focus_to_cam_1_for_3_seconds
+  m_EditorClassIdentifier: 
+  _camIndex: 1
+  _focusDuration: 3
+  _useOnce: 1
