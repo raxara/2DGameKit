@@ -43,6 +43,7 @@ namespace Gamekit2D
 
         protected virtual void ExecuteOnEnter(Collider2D other)
         {
+            Debug.Log("ExecuteOnEnter");
             OnEnter.Invoke();
             for (int i = 0; i < inventoryChecks.Length; i++)
             {

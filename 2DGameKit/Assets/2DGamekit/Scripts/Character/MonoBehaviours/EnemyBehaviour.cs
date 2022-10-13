@@ -72,6 +72,7 @@ namespace Gamekit2D
         protected float m_TimeSinceLastTargetView;
 
         protected float m_FireTimer = 0.0f;
+        public float m_FireDelay = 1.0f;
 
         //as we flip the sprite instead of rotating/scaling the object, this give the forward vector according to the sprite orientation
         protected Vector2 m_SpriteForward;
@@ -367,7 +368,7 @@ namespace Gamekit2D
             m_Animator.SetTrigger(m_HashShootingPara);
             shootingAudio.PlayRandomSound();
 
-            m_FireTimer = 1.0f;
+            m_FireTimer = m_FireDelay;
         }
 
         public void Shooting()

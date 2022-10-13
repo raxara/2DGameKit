@@ -23,6 +23,7 @@ namespace Gamekit2D
 
             public bool CheckInventory(InventoryController inventory)
             {
+                Debug.Log("checkInventory appelé");
                 if (inventory != null)
                 {
                     for (var i = 0; i < inventoryItems.Length; i++)

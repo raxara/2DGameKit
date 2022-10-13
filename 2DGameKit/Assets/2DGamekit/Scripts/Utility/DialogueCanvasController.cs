@@ -13,6 +13,10 @@ namespace Gamekit2D
         protected Coroutine m_DeactivationCoroutine;
     
         protected readonly int m_HashActivePara = Animator.StringToHash ("Active");
+        public bool isOpen
+        {
+            get { return animator.GetBool(m_HashActivePara); }
+        }
 
         IEnumerator SetAnimatorParameterWithDelay (float delay)
         {
