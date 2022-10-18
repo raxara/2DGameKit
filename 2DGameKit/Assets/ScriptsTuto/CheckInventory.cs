@@ -14,9 +14,11 @@ public class CheckInventory : MonoBehaviour
 
     public TransitionPoint m_transitionPoint;
 
-    public UnityEvent m_onEnter;
-
     public DialogueCanvasController m_dialCtrl;
+
+    public string m_gotKeysMessage;
+
+    public Animator m_doorAnimator;
 
     public void Start()
     {
@@ -34,28 +36,30 @@ public class CheckInventory : MonoBehaviour
                 return;
             }
         }
+        DisplayMessage(m_gotKeysMessage);
+        m_doorAnimator.Play("DoorOpening");
     }
 
-    public void loadLevel(string sceneName)
+    public void LoadLevel(string sceneName)
     {
         m_transitionPoint.newSceneName = sceneName;
         m_transitionPoint.gameObject.SetActive(true);
     }
 
-    public void DisplayMessage(KeyLvlMatch param) {
-        m_dialCtrl.ActivateCanvasWithText(param.message);
+    public void DisplayMessage(string message) {
+        m_dialCtrl.ActivateCanvasWithText(message);
         m_dialCtrl.DeactivateCanvasWithDelay(3);
 
     }
 
     IEnumerator LvlTransitionCorout(KeyLvlMatch param)
     {
-        DisplayMessage(param);
+        DisplayMessage(param.message);
         while (m_dialCtrl.isOpen) 
         {
             yield return null;
         }
-        loadLevel(param.sceneName);
+        LoadLevel(param.sceneName);
     }
 
     [System.Serializable]
